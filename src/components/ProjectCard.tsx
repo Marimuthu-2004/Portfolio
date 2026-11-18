@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ExternalLink, ChevronDown, ChevronUp, Code2 } from 'lucide-react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -34,7 +34,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               {project.title}
             </h3>
           </div>
-          <div className="flex gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
+            {project.colabUrl && (
+              <a
+                href={project.colabUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-8 px-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 hover:bg-amber-500/20 hover:border-amber-500/30 transition-all font-medium"
+                aria-label={`Google Colab Notebook for ${project.title}`}
+                title="Google Colab Notebook"
+              >
+                <Code2 size={13} />
+                <span className="hidden sm:inline">Colab</span>
+              </a>
+            )}
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -42,6 +55,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-all"
                 aria-label={`GitHub repository for ${project.title}`}
+                title="GitHub Repository"
               >
                 <Github size={14} />
               </a>
@@ -53,6 +67,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/20 transition-all"
                 aria-label={`Live demo for ${project.title}`}
+                title="Live Demo"
               >
                 <ExternalLink size={14} />
               </a>
@@ -135,6 +150,47 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   <h4 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">Outcome</h4>
                   <p className="text-slate-400 text-sm">{project.outcome}</p>
                 </div>
+
+                {/* Project Links */}
+                {(project.colabUrl || project.githubUrl || project.liveUrl) && (
+                  <div className="pt-1 flex flex-wrap gap-2.5">
+                    {project.colabUrl && (
+                      <a
+                        href={project.colabUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 hover:text-amber-300 hover:bg-amber-500/20 text-xs font-semibold transition-all"
+                      >
+                        <Code2 size={13} />
+                        Google Colab Notebook
+                        <ExternalLink size={11} className="opacity-70" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-white/20 text-xs font-semibold transition-all"
+                      >
+                        <Github size={13} />
+                        GitHub Repository
+                        <ExternalLink size={11} className="opacity-70" />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/20 text-xs font-semibold transition-all"
+                      >
+                        <ExternalLink size={13} />
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                )}
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5">

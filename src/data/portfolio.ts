@@ -155,6 +155,7 @@ export const projects: Project[] = [
     ],
     outcome: 'Created a consolidated business dashboard and visualizations to identify sales patterns, profitability differences and opportunities for better business decisions.',
     githubUrl: 'https://github.com/Marimuthu-2004/Portfolio/tree/main/Global-Superstore-Sales-Analysis',
+    colabUrl: 'https://colab.research.google.com/drive/15F7dH95ORyM4I8jhDDOyQZOPh-vyxJCY?usp=sharing',
     tags: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Sales Analytics', 'Google Colab'],
     gradient: 'from-cyan-500/20 to-blue-500/20',
   },

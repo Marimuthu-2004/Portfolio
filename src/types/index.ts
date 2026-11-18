@@ -33,6 +33,7 @@ export interface Project {
   insights: string[];
   outcome: string;
   githubUrl?: string;
+  colabUrl?: string;
   liveUrl?: string;
   tags: string[];
   gradient: string;
