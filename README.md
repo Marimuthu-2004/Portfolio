@@ -2,7 +2,7 @@
 
 Welcome to my Data Analyst Portfolio!
 
-I am an aspiring Data Analyst skilled in Python, SQL, Excel, and data visualization.
+I am an aspiring Data Analyst skilled in Python, SQL, Excel, Power BI, and data visualization.
 
 ## Projects
 
@@ -18,9 +18,17 @@ I am an aspiring Data Analyst skilled in Python, SQL, Excel, and data visualizat
 - Created visualizations using Matplotlib and Seaborn, and implemented a baseline logistic regression classification model (~82% accuracy).
 - [View Project Folder](./Telecom-Customer-Churn-Analysis/) | [Open in Google Colab](https://colab.research.google.com/drive/15F7dH95ORyM4I8jhDDOyQZOPh-vyxJCY?usp=sharing)
 
+### 3. Sales Performance Dashboard
+- Developed an executive Business Intelligence dashboard in Power BI analyzing sales transactions, profitability, and operational efficiency.
+- Implemented a Star Schema relational data model linking FactSales with DimProduct and DateTable.
+- Formulated 11+ DAX business measures including Year-To-Date (YTD), Previous Month Sales, Sales Growth %, and Sales Variance radial gauge.
+- Built interactive visualizations with historical trend sparklines, geospatial bubble mapping, and dynamic product ranking charts.
+- [View Project Folder](./Sales-Performance-Dashboard/) | [View on GitHub](https://github.com/Marimuthu-2004/Sales-Performance-Dashboard) | [View Dashboard PDF](./Sales-Performance-Dashboard/Sales_Performance_Dashboard.pdf)
+
 ## Tools & Technologies
+- Power BI & DAX
 - Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn)
 - SQL (MySQL, Joins, Subqueries, Window Functions)
 - Microsoft Excel
-- Power BI & Tableau
+- Tableau
 - Google Colab & Jupyter Notebook

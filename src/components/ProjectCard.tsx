@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, ChevronDown, ChevronUp, Code2 } from 'lucide-react';
+import { Github, ExternalLink, ChevronDown, ChevronUp, Code2, FileText } from 'lucide-react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -48,6 +48,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 <span className="hidden sm:inline">Colab</span>
               </a>
             )}
+            {project.pdfUrl && (
+              <a
+                href={project.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-8 px-2.5 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center gap-1.5 text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-500/20 hover:border-rose-500/30 transition-all font-medium"
+                aria-label={`View Dashboard PDF for ${project.title}`}
+                title="View Dashboard PDF"
+              >
+                <FileText size={13} />
+                <span className="hidden sm:inline">PDF</span>
+              </a>
+            )}
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -74,6 +87,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
           </div>
         </div>
+
+        {/* Project Image Preview */}
+        {project.image && (
+          <div className="relative mb-4 rounded-xl overflow-hidden border border-white/10 group-hover:border-cyan-500/30 transition-all">
+            <img
+              src={project.image.startsWith('http') ? project.image : `${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
+              alt={`Dashboard preview for ${project.title}`}
+              className="w-full h-44 object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
+          </div>
+        )}
 
         {/* Description */}
         <p className="text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
@@ -152,7 +178,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 </div>
 
                 {/* Project Links */}
-                {(project.colabUrl || project.githubUrl || project.liveUrl) && (
+                {(project.colabUrl || project.pdfUrl || project.githubUrl || project.liveUrl) && (
                   <div className="pt-1 flex flex-wrap gap-2.5">
                     {project.colabUrl && (
                       <a
@@ -163,6 +189,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                       >
                         <Code2 size={13} />
                         Google Colab Notebook
+                        <ExternalLink size={11} className="opacity-70" />
+                      </a>
+                    )}
+                    {project.pdfUrl && (
+                      <a
+                        href={project.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 hover:text-rose-300 hover:bg-rose-500/20 text-xs font-semibold transition-all"
+                      >
+                        <FileText size={13} />
+                        View Dashboard PDF
                         <ExternalLink size={11} className="opacity-70" />
                       </a>
                     )}

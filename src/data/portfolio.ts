@@ -38,7 +38,7 @@ I believe good data analysis is not just about numbers—it's about communicatin
 };
 
 export const metrics: Metric[] = [
-  { label: 'Projects Completed', value: 2, unit: 'Analytics Projects', icon: '📊', color: 'cyan' },
+  { label: 'Projects Completed', value: 3, unit: 'Analytics Projects', icon: '📊', color: 'cyan' },
   { label: 'Certifications', value: 2, unit: 'HackerRank Certified', icon: '🏅', color: 'violet' },
   { label: 'Technologies', value: 15, unit: 'Tools & Languages', icon: '⚙️', color: 'emerald' },
   { label: 'Academic CGPA', value: 8.1, unit: '/ 10.0', icon: '🎓', color: 'amber' },
@@ -179,6 +179,27 @@ export const projects: Project[] = [
     colabUrl: 'https://colab.research.google.com/drive/15F7dH95ORyM4I8jhDDOyQZOPh-vyxJCY?usp=sharing',
     tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'EDA', 'Machine Learning', 'Telecom Analytics'],
     gradient: 'from-violet-500/20 to-purple-500/20',
+  },
+  {
+    id: 'sales-performance-dashboard',
+    title: 'Sales Performance Dashboard',
+    category: 'Power BI & Business Intelligence',
+    description: 'An executive Business Intelligence dashboard analyzing multi-table sales and profit data with interactive KPI scorecards, dynamic period metrics, product rankings, and regional geospatial filtering.',
+    problem: 'Business leadership required a unified executive dashboard to track revenue growth, target variance, and profitability across regional zones and product categories to optimize inventory and sales strategy.',
+    tools: ['Power BI', 'DAX', 'Data Visualization', 'Power Query'],
+    process: ['Data Cleaning & Profiling', 'Star Schema Modeling', 'DAX Business Logic', 'KPI Scorecard Design', 'Geospatial & Trend Visuals', 'Executive Reporting'],
+    insights: [
+      'Engineered star schema model linking FactSales with DimProduct and DateTable for dynamic cross-filtering',
+      'Formulated 11+ DAX measures including YTD, Previous Month Sales, Sales Growth %, and Sales Variance radial gauge',
+      'Ranked top-selling products versus margin leaders to distinguish volume drivers from profitability drivers',
+      'Implemented geospatial bubble map with drill-down capability across North, East, South, and West zones',
+    ],
+    outcome: 'An interactive executive Power BI dashboard enabling real-time visibility into sales targets, variance tracking, and profit margins.',
+    githubUrl: 'https://github.com/Marimuthu-2004/Sales-Performance-Dashboard',
+    pdfUrl: 'https://github.com/Marimuthu-2004/Sales-Performance-Dashboard/blob/main/Sales_Performance_Dashboard.pdf',
+    image: 'projects/sales-performance-dashboard.jpg',
+    tags: ['Power BI', 'DAX', 'Data Visualization', 'Business Intelligence', 'KPI', 'Dashboard'],
+    gradient: 'from-amber-500/20 to-orange-500/20',
   },
 ];
 
