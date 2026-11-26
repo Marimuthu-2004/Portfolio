@@ -218,9 +218,9 @@ export const projects: Project[] = [
     ],
     outcome: 'A comprehensive 20-question EDA study, complete Jupyter Notebook, and report highlighting key academic drivers to guide targeted interventions and improve educational outcomes.',
     githubUrl: 'https://github.com/Marimuthu-2004/Syntecxhub_Student_Performance_Analysis',
-    pdfUrl: 'https://github.com/Marimuthu-2004/Syntecxhub_Student_Performance_Analysis/blob/main/Student%20Performance%20Analysis%20.pdf',
+    colabUrl: 'https://colab.research.google.com/drive/1yVmQATQFeLMCNSbePT1_OooMWbgruxmL?usp=sharing',
     image: 'projects/student-performance-analysis.png',
-    tags: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Education Analytics', 'Statistical Analysis'],
+    tags: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Education Analytics', 'Google Colab'],
     gradient: 'from-emerald-500/20 to-teal-500/20',
   },
 ];

@@ -41,8 +41,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-8 px-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 hover:bg-amber-500/20 hover:border-amber-500/30 transition-all font-medium"
-                aria-label={`Google Colab Notebook for ${project.title}`}
-                title="Google Colab Notebook"
+                aria-label={`View in Google Colab: ${project.title}`}
+                title="View in Google Colab"
               >
                 <Code2 size={13} />
                 <span className="hidden sm:inline">Colab</span>
@@ -185,10 +185,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                         href={project.colabUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 hover:text-amber-300 hover:bg-amber-500/20 text-xs font-semibold transition-all"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 hover:text-amber-300 hover:bg-amber-500/20 hover:border-amber-500/30 text-xs font-semibold transition-all"
                       >
                         <Code2 size={13} />
-                        Google Colab Notebook
+                        View in Google Colab
                         <ExternalLink size={11} className="opacity-70" />
                       </a>
                     )}
