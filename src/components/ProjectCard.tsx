@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, ChevronDown, ChevronUp, Code2, FileText } from 'lucide-react';
+import { Github, ExternalLink, ChevronDown, ChevronUp, Code2, FileText, Download } from 'lucide-react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -50,15 +50,27 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
             {project.pdfUrl && (
               <a
-                href={project.pdfUrl}
+                href={project.pdfUrl.startsWith('http') ? project.pdfUrl : `${import.meta.env.BASE_URL}${project.pdfUrl.replace(/^\//, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-8 px-2.5 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center gap-1.5 text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-500/20 hover:border-rose-500/30 transition-all font-medium"
                 aria-label={`View Dashboard PDF for ${project.title}`}
-                title="View Dashboard PDF"
+                title="View Dashboard (PDF)"
               >
                 <FileText size={13} />
                 <span className="hidden sm:inline">PDF</span>
+              </a>
+            )}
+            {project.pbixUrl && (
+              <a
+                href={project.pbixUrl.startsWith('http') ? project.pbixUrl : `${import.meta.env.BASE_URL}${project.pbixUrl.replace(/^\//, '')}`}
+                download="Adventures_Works.pbix"
+                className="h-8 px-2.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 hover:bg-yellow-500/20 hover:border-yellow-500/30 transition-all font-medium"
+                aria-label={`Download Power BI File for ${project.title}`}
+                title="Download Power BI File (.pbix)"
+              >
+                <Download size={13} />
+                <span className="hidden sm:inline">PBIX</span>
               </a>
             )}
             {project.githubUrl && (
@@ -178,7 +190,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 </div>
 
                 {/* Project Links */}
-                {(project.colabUrl || project.pdfUrl || project.githubUrl || project.liveUrl) && (
+                {(project.colabUrl || project.pdfUrl || project.pbixUrl || project.githubUrl || project.liveUrl) && (
                   <div className="pt-1 flex flex-wrap gap-2.5">
                     {project.colabUrl && (
                       <a
@@ -194,14 +206,24 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                     )}
                     {project.pdfUrl && (
                       <a
-                        href={project.pdfUrl}
+                        href={project.pdfUrl.startsWith('http') ? project.pdfUrl : `${import.meta.env.BASE_URL}${project.pdfUrl.replace(/^\//, '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 hover:text-rose-300 hover:bg-rose-500/20 text-xs font-semibold transition-all"
                       >
                         <FileText size={13} />
-                        View Dashboard PDF
+                        View Dashboard (PDF)
                         <ExternalLink size={11} className="opacity-70" />
+                      </a>
+                    )}
+                    {project.pbixUrl && (
+                      <a
+                        href={project.pbixUrl.startsWith('http') ? project.pbixUrl : `${import.meta.env.BASE_URL}${project.pbixUrl.replace(/^\//, '')}`}
+                        download="Adventures_Works.pbix"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 hover:text-yellow-300 hover:bg-yellow-500/20 text-xs font-semibold transition-all"
+                      >
+                        <Download size={13} />
+                        Download Power BI File (.pbix)
                       </a>
                     )}
                     {project.githubUrl && (

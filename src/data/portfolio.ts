@@ -38,7 +38,7 @@ I believe good data analysis is not just about numbers—it's about communicatin
 };
 
 export const metrics: Metric[] = [
-  { label: 'Projects Completed', value: 3, unit: 'Analytics Projects', icon: '📊', color: 'cyan' },
+  { label: 'Projects Completed', value: 5, unit: 'Analytics Projects', icon: '📊', color: 'cyan' },
   { label: 'Certifications', value: 2, unit: 'HackerRank Certified', icon: '🏅', color: 'violet' },
   { label: 'Technologies', value: 15, unit: 'Tools & Languages', icon: '⚙️', color: 'emerald' },
   { label: 'Academic CGPA', value: 8.1, unit: '/ 10.0', icon: '🎓', color: 'amber' },
@@ -222,6 +222,29 @@ export const projects: Project[] = [
     image: 'projects/student-performance-analysis.png',
     tags: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Education Analytics', 'Google Colab'],
     gradient: 'from-emerald-500/20 to-teal-500/20',
+  },
+  {
+    id: 'adventureworks-sales-performance-dashboard',
+    title: 'AdventureWorks Sales Performance Dashboard',
+    category: 'Power BI & Business Intelligence',
+    description: 'AdventureWorks Sales Dashboard is a Business Intelligence project developed using Microsoft Power BI to analyze sales performance and generate meaningful business insights.',
+    problem: 'Business leadership required an executive-level dashboard to analyze revenue, cost, profit, customer contributions, product performance, and regional sales trends across multi-year retail transactions.',
+    tools: ['Microsoft Power BI', 'Power Query (ETL)', 'DAX', 'Data Modeling', 'Data Visualization'],
+    process: ['Data Cleaning & Transformation', 'Star Schema Modeling', 'DAX Measures Calculation', 'Business Overview Analysis', 'Product Revenue & Cost Analysis', 'Customer & Regional Analysis'],
+    insights: [
+      'Developed Business Overview analyzing Total Revenue, Total Cost, Total Profit, Total Customers, Total Orders, and Profit Margin %',
+      'Tracked YTD and MTD Revenue alongside month-over-month sales trends and revenue vs previous month performance',
+      'Identified Top 10 Products by revenue contribution and compared product revenue vs cost to highlight high-margin items',
+      'Analyzed Top 10 revenue-generating customers and evaluated order distribution across customer segments',
+      'Evaluated country-wise revenue and regional profit contributions to uncover geographical performance drivers',
+    ],
+    outcome: 'An interactive, executive multi-page Power BI dashboard delivering comprehensive visibility into revenue growth, product profitability, and regional sales trends.',
+    githubUrl: 'https://github.com/Marimuthu-2004/AdventureWorks_Sales_Dashboard',
+    pdfUrl: 'projects/Adventures_Works_Dashboard.pdf',
+    pbixUrl: 'projects/Adventures_Works.pbix',
+    image: 'projects/adventureworks-sales-dashboard.png',
+    tags: ['Power BI', 'Power Query', 'DAX', 'Data Modeling', 'Data Visualization', 'Sales Analytics', 'KPI Dashboard'],
+    gradient: 'from-blue-500/20 to-indigo-500/20',
   },
 ];
 

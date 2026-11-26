@@ -36,6 +36,7 @@ export interface Project {
   colabUrl?: string;
   liveUrl?: string;
   pdfUrl?: string;
+  pbixUrl?: string;
   image?: string;
   tags: string[];
   gradient: string;
