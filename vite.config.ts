@@ -1,13 +1,11 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/Portfolio/',
+  base: process.env.BASE_PATH || (process.env.VERCEL ? '/' : (process.env.GITHUB_ACTIONS ? '/Portfolio/' : '/')),
   plugins: [
     tailwindcss(),
     react(),
   ],
 })
-

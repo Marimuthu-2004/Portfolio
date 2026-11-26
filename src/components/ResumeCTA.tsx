@@ -34,7 +34,7 @@ export default function ResumeCTA() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
-                href="/DataAnalyst.docx"
+                href={`${import.meta.env.BASE_URL}DataAnalyst.docx`}
                 download="MariMuthuM_DataAnalyst_Resume.docx"
                 className="btn-primary text-base px-8 py-3.5"
                 whileHover={{ scale: 1.05 }}
