@@ -67,8 +67,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-all"
-                aria-label={`GitHub repository for ${project.title}`}
-                title="GitHub Repository"
+                aria-label={`View on GitHub: ${project.title}`}
+                title="View on GitHub"
               >
                 <Github size={14} />
               </a>
@@ -212,7 +212,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-white/20 text-xs font-semibold transition-all"
                       >
                         <Github size={13} />
-                        GitHub Repository
+                        View on GitHub
                         <ExternalLink size={11} className="opacity-70" />
                       </a>
                     )}

@@ -201,6 +201,28 @@ export const projects: Project[] = [
     tags: ['Power BI', 'DAX', 'Data Visualization', 'Business Intelligence', 'KPI', 'Dashboard'],
     gradient: 'from-amber-500/20 to-orange-500/20',
   },
+  {
+    id: 'student-performance-analysis',
+    title: 'Student Performance Analysis',
+    category: 'Python Data Analysis',
+    description: 'A Data Analytics project focused on exploring student performance data using Python. The project involves data cleaning, exploratory data analysis, identifying patterns, and visualizing insights to understand factors associated with student academic performance.',
+    problem: 'Educational institutions require data-backed insights into student study habits, attendance, school environments, and socioeconomic factors to detect academic vulnerabilities early and design targeted academic support interventions.',
+    tools: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+    process: ['Data Loading', 'Missing Value Imputation', 'Exploratory Data Analysis', 'Study Habits & Attendance Analysis', 'Socioeconomic & School Factors', 'Actionable Recommendations'],
+    insights: [
+      'Analyzed 6,607 student records across 20 academic, behavioral, and demographic features with zero data leakage',
+      'Evaluated normal distribution of Exam_Score (mean ~67.2) and categorized students into Low, Medium, and High performance groups',
+      'Identified strong positive correlations between study hours (25+ hrs), high attendance, and superior current examination scores',
+      'Observed higher average academic performance among students with high teacher quality, access to learning resources, and parental involvement',
+      'Conducted 20 targeted analytical questions spanning tutoring sessions, sleep hours, family income, peer influence, and distance from home',
+    ],
+    outcome: 'A comprehensive 20-question EDA study, complete Jupyter Notebook, and report highlighting key academic drivers to guide targeted interventions and improve educational outcomes.',
+    githubUrl: 'https://github.com/Marimuthu-2004/Syntecxhub_Student_Performance_Analysis',
+    pdfUrl: 'https://github.com/Marimuthu-2004/Syntecxhub_Student_Performance_Analysis/blob/main/Student%20Performance%20Analysis%20.pdf',
+    image: 'projects/student-performance-analysis.png',
+    tags: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'EDA', 'Education Analytics', 'Statistical Analysis'],
+    gradient: 'from-emerald-500/20 to-teal-500/20',
+  },
 ];
 
 export const education: Education[] = [
